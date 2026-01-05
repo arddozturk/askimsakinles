@@ -1,0 +1,47 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;color:#fff;font-family:Arial;text-align:center;overflow:hidden}
+
+.top-bar{padding:15px;z-index:30;position:relative}
+.top-bar button{font-size:32px;margin:0 10px;background:none;border:none;cursor:pointer}
+
+.health-bar{width:80%;height:16px;background:#333;border-radius:10px;margin:10px auto;overflow:hidden}
+#health-fill{height:100%;width:100%;background:linear-gradient(90deg,#ff5555,#ff0000)}
+.health-text{font-size:14px;margin-bottom:10px}
+
+/* LAYERS */
+#game-layer{position:relative;width:100%;height:70vh;overflow:hidden;z-index:1}
+#ui-layer{position:fixed;inset:0;pointer-events:none;z-index:10}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.9);
+display:none;justify-content:center;align-items:center;z-index:20}
+
+/* CHARACTER */
+#character{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:80%}
+
+/* PROJECTILE */
+.projectile{position:absolute;font-size:32px;transition:transform .35s linear}
+
+/* FX */
+.fx{position:absolute;width:140px;transform:translate(-50%,-50%);
+animation:fx .4s forwards}
+@keyframes fx{from{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+to{opacity:1;transform:translate(-50%,-50%) scale(1.2)}}
+
+/* SPEECH */
+#speech{position:absolute;bottom:78%;left:50%;transform:translateX(-50%);
+background:#fff;color:#111;padding:10px 14px;border-radius:14px;
+font-size:14px;opacity:0;transition:.15s;white-space:nowrap}
+
+/* HEARTS */
+.heart{position:fixed;top:-30px;font-size:24px;
+animation:fall 2.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh);opacity:0}}
+
+/* SHAKE */
+.shake{animation:shake .25s}
+@keyframes shake{0%{transform:translate(0)}25%{transform:translate(-6px,3px)}
+50%{transform:translate(6px,-3px)}75%{transform:translate(-6px,3px)}100%{transform:translate(0)}}
+
+/* OVERLAY BOX */
+.overlay-box{text-align:center}
+.overlay-box button{margin:10px;padding:12px 18px;border:none;border-radius:20px;font-size:16px;cursor:pointer}
+.overlay-text{font-size:22px;margin-bottom:20px}
