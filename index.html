@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mini Oyun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <button onclick="selectItem('tomato')">🍅</button>
+    <button onclick="selectItem('boxing')">🥊</button>
+    <button onclick="selectItem('rose')">🌹</button>
+</div>
+
+<div class="health-bar"><div id="health-fill"></div></div>
+<div class="health-text">Can: <span id="health">100</span></div>
+
+<div class="game-area" id="gameArea">
+    <img src="adam.jpg" id="character">
+    <div id="speech"></div>
+</div>
+
+<div id="flash"></div>
+
+<audio id="slapSound" src="slap.wav"></audio>
+<audio id="kissSound" src="kiss.wav"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
