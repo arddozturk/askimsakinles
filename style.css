@@ -1,0 +1,37 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;color:#fff;font-family:Arial;text-align:center;overflow:hidden}
+.top-bar{padding:15px}
+.top-bar button{font-size:32px;margin:0 10px;background:none;border:none;cursor:pointer}
+.health-bar{width:80%;height:16px;background:#333;border-radius:10px;margin:10px auto;overflow:hidden}
+#health-fill{height:100%;width:100%;background:linear-gradient(90deg,#ff5555,#ff0000);transition:.2s}
+.health-text{font-size:14px;margin-bottom:10px}
+.game-area{position:relative;width:100%;height:75vh;overflow:hidden;cursor:crosshair}
+#character{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:80%;pointer-events:none}
+
+.projectile{position:absolute;font-size:32px;transition:transform .35s linear}
+.fx{position:absolute;width:140px;transform:translate(-50%,-50%);animation:fx .4s forwards}
+@keyframes fx{from{opacity:0;transform:translate(-50%,-50%) scale(.4)}to{opacity:1;transform:translate(-50%,-50%) scale(1.2)}}
+
+.drip{position:absolute;width:10px;height:30px;background:red;border-radius:10px;animation:drip 1.5s forwards}
+@keyframes drip{to{transform:translateY(120px);opacity:0}}
+
+.shake{animation:shake .25s}
+@keyframes shake{0%{transform:translate(0)}25%{transform:translate(-6px,3px)}50%{transform:translate(6px,-3px)}75%{transform:translate(-6px,3px)}100%{transform:translate(0)}}
+
+#speech{position:absolute;bottom:75%;left:50%;transform:translateX(-50%);
+background:#fff;color:#111;padding:10px 14px;border-radius:14px;
+font-size:14px;opacity:0;transition:.2s;white-space:nowrap;z-index:5}
+#speech:after{content:'';position:absolute;bottom:-8px;left:50%;
+transform:translateX(-50%);border-width:8px 8px 0 8px;
+border-style:solid;border-color:#fff transparent transparent transparent}
+
+.falling-heart{position:fixed;top:-30px;font-size:24px;
+animation:fall 2.5s linear forwards;z-index:10}
+@keyframes fall{to{transform:translateY(110vh);opacity:0}}
+
+#flash{position:fixed;inset:0;background:red;opacity:0;pointer-events:none}
+
+#death{position:fixed;inset:0;background:rgba(0,0,0,.9);
+display:none;flex-direction:column;justify-content:center;align-items:center;z-index:20}
+#death button{margin:10px;padding:12px 18px;font-size:16px;border:none;border-radius:20px;cursor:pointer}
+.death-text{font-size:22px;margin-bottom:20px}
