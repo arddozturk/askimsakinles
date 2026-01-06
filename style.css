@@ -1,11 +1,15 @@
-/* RESET */
+/* ======================
+   RESET
+====================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* ======================
+   BODY
+====================== */
 body {
   background: #111;
   color: #fff;
@@ -14,7 +18,9 @@ body {
   overflow: hidden;
 }
 
-/* TOP BAR */
+/* ======================
+   TOP BAR
+====================== */
 .top-bar {
   padding: 15px;
   position: relative;
@@ -29,7 +35,9 @@ body {
   cursor: pointer;
 }
 
-/* HEALTH */
+/* ======================
+   HEALTH
+====================== */
 .health-bar {
   width: 80%;
   height: 16px;
@@ -50,11 +58,9 @@ body {
   margin-bottom: 10px;
 }
 
-/* =======================
+/* ======================
    LAYERS
-======================= */
-
-/* GAME */
+====================== */
 #game-layer {
   position: relative;
   width: 100%;
@@ -63,7 +69,6 @@ body {
   z-index: 1;
 }
 
-/* UI */
 #ui-layer {
   position: fixed;
   inset: 0;
@@ -71,7 +76,6 @@ body {
   z-index: 10;
 }
 
-/* DEATH OVERLAY */
 #overlay {
   position: fixed;
   inset: 0;
@@ -82,44 +86,38 @@ body {
   z-index: 20;
 }
 
-/* =======================
-   GRAVE SCENE (İLK SAYFA GİBİ)
-======================= */
+/* ======================
+   GRAVE SCENE
+====================== */
 #grave-scene {
   position: fixed;
   inset: 0;
 
-  /* 👇 ilk sayfadaki ferah vitrin hissi */
   background: linear-gradient(
     180deg,
-    #f3f3f3 0%,
-    #ffffff 55%,
+    #f2f2f2 0%,
+    #ffffff 60%,
     #ededed 100%
   );
 
   display: none;
-
-  display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: 8vh 6vw;   /* 👈 fotoğraf çevresinde boşluk */
+  padding: 8vh 6vw;
   z-index: 25;
 }
 
-/* Mezar fotoğrafı */
 #grave-scene img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-
-  /* 👇 ürün fotoğrafı hissi */
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.18));
 }
 
-/* =======================
+/* ======================
    CHARACTER
-======================= */
+====================== */
 #character {
   position: absolute;
   bottom: 0;
@@ -128,13 +126,12 @@ body {
 
   max-width: 100%;
   max-height: 100%;
-
   object-fit: contain;
 }
 
-/* =======================
+/* ======================
    PROJECTILES & FX
-======================= */
+====================== */
 .projectile {
   position: absolute;
   font-size: 32px;
@@ -159,9 +156,9 @@ body {
   }
 }
 
-/* =======================
+/* ======================
    SPEECH BUBBLE
-======================= */
+====================== */
 #speech {
   position: absolute;
   bottom: 78%;
@@ -176,9 +173,9 @@ body {
   transition: opacity 0.15s;
 }
 
-/* =======================
+/* ======================
    HEARTS
-======================= */
+====================== */
 .heart {
   position: fixed;
   top: -30px;
@@ -193,9 +190,9 @@ body {
   }
 }
 
-/* =======================
+/* ======================
    SHAKE
-======================= */
+====================== */
 .shake {
   animation: shake 0.25s;
 }
@@ -208,9 +205,9 @@ body {
   100% { transform: translate(0); }
 }
 
-/* =======================
+/* ======================
    OVERLAY CONTENT
-======================= */
+====================== */
 .overlay-box {
   text-align: center;
 }
@@ -229,9 +226,9 @@ body {
   margin-bottom: 20px;
 }
 
-/* =======================
+/* ======================
    MOBILE FIX
-======================= */
+====================== */
 @media (max-width: 768px) {
   #game-layer {
     height: 85vh;
