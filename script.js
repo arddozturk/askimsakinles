@@ -13,7 +13,7 @@ const punch=document.getElementById('punchSound');
 const kiss=document.getElementById('kissSound');
 const sad=document.getElementById('sadMusic');
 
-const normalTexts=['özür dilerim aşkım','haklısın bitanem','sakin ol güzelim'];
+const normalTexts=['özür dilerim aşkım','haklısın bitanem','sakin ol güzelim','aşkım yetmez mi çok vurdun'];
 const loveTexts=['seni seviyorum aşkım','iyi ki varsın','kurban olurum sana'];
 
 document.querySelectorAll('.top-bar button').forEach(b=>{
@@ -48,17 +48,31 @@ function impact(x,y){
 }
 
 function hit(x,y){
- damage();play(punch);
- gameLayer.classList.add('shake');
- setTimeout(()=>gameLayer.classList.remove('shake'),250);
- fx(selected==='tomato'?'tomato_splat.png':'punch_fx.png',x,y);
- showSpeech(normalTexts);
+  if(selected === 'boxing'){
+    damage(5);   // 🥊 5 can
+  } else {
+    damage(1);   // 🍅 1 can
+  }
+
+  play(punch);
+  gameLayer.classList.add('shake');
+  setTimeout(()=>gameLayer.classList.remove('shake'),250);
+
+  fx(
+    selected === 'tomato' ? 'tomato_splat.png' : 'punch_fx.png',
+    x,y
+  );
+
+  showSpeech(normalTexts);
 }
 
-function damage(){
- health--;
- if(health<=0){health=0;die();}
- update();
+function damage(amount){
+  health -= amount;
+  if(health <= 0){
+    health = 0;
+    die();
+  }
+  update();
 }
 
 function heal(){health=Math.min(100,health+1);update()}
