@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>SELCANA ASIGIM</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Mini Oyun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="top-bar">
-<button data-item="tomato">🍅</button>
-<button data-item="boxing">🥊</button>
-<button data-item="rose">🌹</button>
-</div>
 
-<div class="health-bar"><div id="health-fill"></div></div>
-<div class="health-text">Can: <span id="health">100</span></div>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <button data-item="tomato">🍅</button>
+    <button data-item="boxing">🥊</button>
+    <button data-item="rose">🌹</button>
+  </div>
 
-<div id="game-layer"><img src="adam.jpg" id="character"></div>
-<div id="ui-layer"><div id="speech"></div></div>
+  <!-- HEALTH -->
+  <div class="health-bar">
+    <div id="health-fill"></div>
+  </div>
+  <div class="health-text">
+    Can: <span id="health">100</span>
+  </div>
 
-<div id="overlay">
- <div class="overlay-box">
-  <div class="overlay-text">Varsın senin yolunda öleyim</div>
-  <button id="reviveBtn">Öp ve Canlandır</button>
-  <button id="watchBtn">Ölmesini izle</button>
- </div>
-</div>
+  <!-- GAME LAYER -->
+  <div id="game-layer">
+    <img src="adam.jpg" id="character" alt="Karakter">
+  </div>
 
-<div id="grave-scene"><img src="tombstone.jpg"></div>
+  <!-- UI LAYER -->
+  <div id="ui-layer">
+    <div id="speech"></div>
+  </div>
 
-<audio id="punchSound" src="punch.wav"></audio>
-<audio id="kissSound" src="kiss.wav"></audio>
-<audio id="sadMusic" src="sad_music.wav" loop></audio>
+  <!-- DEATH OVERLAY -->
+  <div id="overlay">
+    <div class="overlay-box">
+      <div class="overlay-text">
+        Varsın senin yolunda öleyim
+      </div>
+      <button id="reviveBtn">Öp ve Canlandır</button>
+      <button id="watchBtn">Ölmesini izle</button>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- GRAVE SCENE -->
+  <div id="grave-scene">
+    <img src="tombstone.jpg" alt="Mezar Taşı">
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="punchSound" src="punch.wav" preload="auto"></audio>
+  <audio id="kissSound" src="kiss.wav" preload="auto"></audio>
+  <audio id="sadMusic" src="sad_music.wav" preload="auto" loop></audio>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
