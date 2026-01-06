@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mini Oyun V2.1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+<button data-item="tomato">🍅</button>
+<button data-item="boxing">🥊</button>
+<button data-item="rose">🌹</button>
+</div>
+
+<div class="health-bar"><div id="health-fill"></div></div>
+<div class="health-text">Can: <span id="health">100</span></div>
+
+<div id="game-layer"><img src="adam.jpg" id="character"></div>
+<div id="ui-layer"><div id="speech"></div></div>
+
+<div id="overlay">
+ <div class="overlay-box">
+  <div class="overlay-text">Varsın senin yolunda öleyim</div>
+  <button id="reviveBtn">Öp ve Canlandır</button>
+  <button id="watchBtn">Ölmesini izle</button>
+ </div>
+</div>
+
+<div id="grave-scene"><img src="tombstone.png"></div>
+
+<audio id="punchSound" src="punch.wav"></audio>
+<audio id="kissSound" src="kiss.wav"></audio>
+<audio id="sadMusic" src="sad_music.wav" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
